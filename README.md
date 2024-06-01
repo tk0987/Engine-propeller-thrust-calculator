@@ -11,7 +11,7 @@ Thrust [N] = tan(∆)*Gravity_force [N]
 
 gravity force: just get a scale, and divide the weight of the setup by g=9.81.
 
-∆ is the angle (smaller than 90 deg) of pendulum displacement.
+∆ is the angle (smaller than 90 deg) of pendulum displacement. just like in optics.
 
 for best accuracy, ∆ should be less than 40 deg. it is inside tan() function.
 
