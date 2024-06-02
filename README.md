@@ -11,7 +11,7 @@ Thrust [N] = tan(∆)*Gravity_force [N]
 
 gravity force: just get a scale, and take the mass in grams. 
 
-∆ is the angle (smaller than 90 deg) of pendulum displacement. just like in optics.
+∆ is the angle (smaller than 90 deg) of pendulum displacement. just like in optics - the angle between steady state and displaced state of wire holding pendulum (like between normal vector & reflected light).
 
 for best accuracy, ∆ should be less than 40 deg. it is inside tan() function.
 
