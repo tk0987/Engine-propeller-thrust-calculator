@@ -1,5 +1,7 @@
 # Engine-propeller-thrust-calculator
 
+# screenshot added describes the setup, and what to measure
+
 Thrust can be calculated using ballistic pendulum.
 
 However, one needs to preserve the center of the mass of the pendulum (symmetry!).
