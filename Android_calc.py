@@ -52,7 +52,7 @@ class MainApp(App):
             # Convert inputs to float
             deg = float(self.angle_input.text)
             mass_g = float(self.mass_input.text)
-            udeg = float(self.Uangle_input.text)
+            udeg = float(self.Uangle_input.text)/180.0*np.pi
             umass_g = float(self.Umass_input.text)
             def uncertainty(u_deg,deg,u_mass,mass):
             	return np.sqrt((u_deg*mass/1000.0/np.cos(deg)**2)**2+(np.tan(deg)*u_mass/1000.0)**2)
