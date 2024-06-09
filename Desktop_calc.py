@@ -7,6 +7,17 @@
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
+"""
+one mistake was solved - all 'bout uncertainty() function.
+mistake was that: degrees were feeding this function instead of radians. 
+at 11 radians uncertainty was horrible.
+problem solved
+
+
+"""
+
+
+
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
@@ -104,7 +115,7 @@ class Ui_Form(object):
 # "li.checked::marker { content: \"\\2612\"; }\n"
 # "</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 # "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1</p></body></html>", None))
-        self.label_2.setText(QCoreApplication.translate("Form", u"Scale division [g]", None))
+        self.label_2.setText("Scale division [g]")
 #         self.LineEdit.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 # "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 # "p, li { white-space: pre-wrap; }\n"
@@ -113,7 +124,7 @@ class Ui_Form(object):
 # "li.checked::marker { content: \"\\2612\"; }\n"
 # "</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 # "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">0</p></body></html>", None))
-        self.label_4.setText(QCoreApplication.translate("Form", u"Scale division [deg]", None))
+        self.label_4.setText("Scale division [deg]")
 #         self.LineEdit_3.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 # "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 # "p, li { white-space: pre-wrap; }\n"
@@ -130,12 +141,10 @@ class Ui_Form(object):
 # "li.checked::marker { content: \"\\2612\"; }\n"
 # "</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 # "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1</p></body></html>", None))
-        self.label.setText(QCoreApplication.translate("Form", u"Mass [g]", None))
-        self.label_3.setText(QCoreApplication.translate("Form", u"Angle\n"
-"of displacement \n"
-"[deg]", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"Calculate thrust [N]", None))
-        self.label_5.setText("")
+        self.label.setText("Mass [g]")
+        self.label_3.setText("Angle\nof displacement \n[deg]")
+        self.pushButton.setText( "Calculate thrust [N]")
+        self.label_5.setText("-------")
     # retranslateUi
     def calculate_force_and_uncertainty(self):
         def uncertainty(u_deg,deg,u_mass,mass):
@@ -147,7 +156,7 @@ class Ui_Form(object):
         u_mass=float(self.LineEdit_2.text())
         rad=deg/180*np.pi
         thrust=np.tan(rad)*mass_g*g/1000.0
-        u_thrust=uncertainty(u_deg,deg,u_mass,mass_g)
+        u_thrust=uncertainty(u_deg,rad,u_mass,mass_g)
         self.label_5.setText(f"Thrust: {thrust:.4f} \u00B1 {u_thrust:.4f} [N]")
 if __name__=="__main__":
     app = QApplication(sys.argv)
