@@ -60,7 +60,7 @@ class MainApp(App):
             angle_rad = deg / 180 * np.pi
             force_g = mass_g * 9.81 / 1000.0  # Assuming g = 9.81 m/s^2
             thrust = np.tan(angle_rad) * force_g
-            u_thrust=uncertainty(udeg,deg,umass_g,mass_g)
+            u_thrust=uncertainty(udeg,angle_rad ,umass_g,mass_g)
             # Update the label's text to the string representation of thrust
             self.solution.text = f"Thrust: {thrust:.4f} \u00B1 {u_thrust:.4f} [N]"# Formatting for better readability
         except ValueError:
