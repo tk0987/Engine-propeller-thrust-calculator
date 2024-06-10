@@ -1,4 +1,4 @@
-# Engine-propeller-thrust-calculator
+# Motor-propeller-thrust-calculator
 
 # screenshot added describes the setup, and what to measure
 
