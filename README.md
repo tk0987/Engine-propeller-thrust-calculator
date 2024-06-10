@@ -23,8 +23,8 @@ also, theres pc pyqt app with uncertanties support.
 
 the uncertainties can be systematic only, but if you obtain experimentally statistical uncertainty/ies, then join them with the formula (provided here for noobs in experimental physics):
 
-# Joined_U = np.sqrt(U_systematic**2 + U_statistical**2)
+# Joined_U = np.sqrt(U_systematic^2 + U_statistical^2)
 
-if you wanna perform experiments in series to obtain an average thrust, then join the results using weighted average (where weight = 1/(total_uncertainty**2)).
+if you wanna perform experiments in series to obtain an average thrust, then join the results using weighted average (where weight = 1/(total_uncertainty^2)).
 
 ![Screenshot_20240602-211129](https://github.com/tk0987/Engine-propeller-thrust-calculator/assets/109526789/a81ee7b7-0253-4076-b862-0830c1a61d5e)
